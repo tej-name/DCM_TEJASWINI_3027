@@ -16,5 +16,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       env:
-        USER:  
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        USER: ${{ secrets.USER}}
+        PASS: ${{ secrets.PASS}}
+     
+      run: |
+        echo $USER
+        echo $PASS 
+        docker build . --file Dockerfile --tag tej-name/dcm_webserver_3027
+        docker login -u $USER -p $PASS
+        docker push tej-name/dcm_webserver_3027
