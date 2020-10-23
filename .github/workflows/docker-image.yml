@@ -21,6 +21,6 @@ jobs:
       run:  |
         echo $USER
         echo $PASS
-        docker build . --file Dockerfile --tag tej-name/dcm_webserver_tej
+        docker build . --file Dockerfile --tag tej-name/dcm_webserver_tej27
         docker login -u $USER -p $PASS
-        docker push tej-name/dcm_webserver_tej
+        docker push tej-name/dcm_webserver_tej27
