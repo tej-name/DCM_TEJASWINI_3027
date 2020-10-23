@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Build the Docker image
       env:
         USER: ${{ secrets.USER }}
@@ -21,6 +21,6 @@ jobs:
       run:  |
         echo $USER
         echo $PASS
-        docker build . --file Dockerfile --tag tej-name/dcm_webserver_tej027
-        docker login -u $USER -p $PASS
-        docker push tej-name/dcm_webserver_tej027
+        sudo docker build . --file Dockerfile --tag tej-name/dcm_webserver_tej027
+        sudo docker login -u $USER -p $PASS
+        sudo docker push tej-name/dcm_webserver_tej027
