@@ -18,7 +18,7 @@ jobs:
       env:
         USER: ${{ secrets.USER }}
         PASS: ${{ secrets.PASS }}
-      run:  |
+      run: |
         echo $USER
         echo $PASS
         sudo docker build . --file Dockerfile --tag tej-name/dcm_webserver_tej3027
